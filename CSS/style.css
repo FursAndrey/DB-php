@@ -1,0 +1,131 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    padding: 30px;
+}
+p{
+    margin: 5px 0;
+}
+textarea{
+	resize: none;
+}
+#box1 > div{
+    width: 700px;
+    margin: 10px 0 10px 0;
+    padding: 5px 5px 50px 15px;
+    position: relative;
+    border: 1px solid silver;
+}
+#box1 > div > h2{
+    width: 94%;
+    text-indent: 20px;
+}
+.del{
+	padding: 5px;
+	border-radius: 50%;
+	background: red;
+	color: white;
+	font: 10px Arial;
+	font-weight: bold;
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    left: 96%;
+    cursor: pointer;
+}
+.red{
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: #f3f372;
+    color: #356bbd;
+    font: 14px Arial;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    top: 40px;
+    left: 0%;
+    cursor: pointer;
+}
+/*модальное окно*/
+.modal{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+.modalMain{
+    width:40vw;
+    min-height: 90px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px 20px 40px 20px;
+    position: relative;
+    top: 10vh;
+    left: 30vw;
+}
+#closeModal, #send, #sendRA, #sendSort{
+    position: absolute;
+}
+#closeModal, #send, #sendRA, #addTask, #sortTask, #sendSort, #logOut{
+    height: 20px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: Arial;
+    padding-top: 3px;
+    font-weight: bold;
+}
+#closeModal{
+    width: 20px;
+    background: #000;
+    top: 20px;
+    right: 20px;
+}
+#send, #sendRA, #sendSort{
+    width: 110px;
+    background: #42a901;
+    bottom: 10px;
+    left: 20px;
+}
+.modal > .modalMain > h6{
+    color: red;
+    font-size: 20px;
+}
+/**/
+#addTask, #sortTask, #logOut{
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 5px 0 4px 0;
+    border: none;
+}
+#addTask{
+    width: 110px;
+    background: #0babd0;
+}
+#sortTask{
+    width: 125px;
+    background: #968BD0;
+    margin: 0 0 5px 20px;
+}
+#logOut{
+    width: 80px;
+    background: #28921D;
+    margin: 0 0 5px 20px;
+}
+/*регистриция / авторизация*/
+#auth, #reg{
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: #a5a5a5;
+    color: #000000;
+    font: 14px Arial;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+}

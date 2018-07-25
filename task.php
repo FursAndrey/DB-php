@@ -7,12 +7,12 @@
         $db = new dataBase();
         if($_POST['operation'] == 'delete' && $_POST['taskID'] != ''){          //если получена задача удалить запись
             $taskID = $_POST['taskID'];                                         //получаем номер записи в базе
-            $mas = $db -> deleteWhere('task','id',$taskID);
+            $mas = $db -> deleteWhere('task','id',$taskID, $_SESSION['userID']);
             $json_data = json_encode($mas);
         }
         else if($_POST['operation'] == 'update' && $_POST['taskID'] != '' && $_POST['themeTask'] != '' && $_POST['taskText'] != '' && $_POST['deadLine'] != ''){
             $taskID = $_POST['taskID'];
-            $mas = $db -> updateTs($taskID,$_POST['themeTask'],$_POST['taskText'],$_POST['deadLine']);
+            $mas = $db -> updateTs($taskID,$_POST['themeTask'],$_POST['taskText'],$_POST['deadLine'],$_SESSION['userID']);
             $json_data = json_encode($mas);
         }
         else if($_POST['operation'] == 'insertInto' && $_POST['themeTask'] != '' && $_POST['taskText'] != '' && $_POST['deadLine'] != ''){

@@ -27,8 +27,8 @@ error_reporting(E_ALL);
             }while($rez);
             return $mas;
         }
-        public function deleteWhere($tabName, $whereElem, $whereVal){
-            $sql = "DELETE FROM $tabName WHERE $whereElem = $whereVal";
+        public function deleteWhere($tabName, $whereElem, $whereVal, $userId){
+            $sql = "DELETE FROM $tabName WHERE $whereElem = $whereVal AND userId = $userId";
             $this -> result = $this -> mysqli -> query($sql);
             $mas = [
                 "delete"=> $this -> mysqli -> affected_rows,
@@ -44,9 +44,9 @@ error_reporting(E_ALL);
             ];
             return $mas;
         }
-        public function updateTs($taskID,$themeTask,$taskText,$deadLine){
+        public function updateTs($taskID,$themeTask,$taskText,$deadLine,$userId){
             $dL = strtotime($deadLine);
-            $sql = "UPDATE `task` SET `headTask` = '" . $themeTask . "', `deadLine` = '" . $dL . "', `textTask` = '" . $taskText . "' WHERE `id` = $taskID";
+            $sql = "UPDATE `task` SET `headTask` = '" . $themeTask . "', `deadLine` = '" . $dL . "', `textTask` = '" . $taskText . "' WHERE `id` = $taskID  AND userId = $userId";
             $this -> result = $this -> mysqli -> query($sql);
             $mas = [
                 'update' => $this -> mysqli -> affected_rows,
